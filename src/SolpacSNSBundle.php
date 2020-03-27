@@ -14,7 +14,7 @@ class SolpacSNSBundle extends Bundle
     public function getContainerExtension()
     {
         if (null === $this->extension) {
-            $this->extxension = new SolpacSNSExtension();
+            $this->extension = new SolpacSNSExtension();
         }
 
         return $this->extension;
