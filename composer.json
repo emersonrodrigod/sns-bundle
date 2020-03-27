@@ -1,0 +1,39 @@
+{
+    "name": "emersonrodrigod/sns-bundle",
+    "description": "A simple Symfony bundle for AWS SNS.",
+    "type": "symfony-bundle",
+    "keywords": [
+        "solpac",
+        "sns",
+        "aws-sdk"
+    ],
+    "homepage": "https://github.com/emersonrodrigod/SNSBundle",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Emerson Dário",
+        "email": "emersonrodrigod@gmail.com",
+        "role": "developer"
+      }
+    ],
+    "require": {
+      "php": ">=7.2",
+      "symfony/config": "^4.0",
+      "symfony/dependency-injection": "^4.0",
+      "symfony/framework-bundle": "^4.0",
+      "symfony/http-foundation": "^4.0",
+      "symfony/http-kernel": "^4.0",
+      "symfony/options-resolver": "^4.0",
+      "symfony/security": "^4.0",
+      "symfony/validator": "^4.0",
+      "aws/aws-sdk-php": "^3.0"
+    },
+    "suggest": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+      "psr-0": { "Solpac\\SNSBundle": "" }
+    },
+    "target-dir": "Solpac/SNSBundle"
+}
