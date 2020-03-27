@@ -17,8 +17,19 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('solpac_sns');
-        $rootNode = $treeBuilder->root('solpac_sns');
+        // Most recent versions of TreeBuilder have a constructor
+        if (\method_exists(TreeBuilder::class, '__construct')) {
+            $treeBuilder = new TreeBuilder('solpac_sns');
+        } else { // which is not the case for older versions
+            $treeBuilder = new TreeBuilder;
+            $treeBuilder->root('solpac_sns');
+        }
+
+        if (method_exists($treeBuilder, 'root')) {
+            $rootNode = $treeBuilder->root('aws');
+        } else {
+            $rootNode = $treeBuilder->getRootNode();
+        }
 
         $rootNode
             ->children()
