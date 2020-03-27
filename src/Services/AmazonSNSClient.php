@@ -19,14 +19,14 @@ class AmazonSNSClient
      */
     public function __construct($amazon_sns_key, $amazon_sns_secret, $amazon_sns_region)
     {
-        $this->service = SnsClient::factory(array(
+        $this->service = new SnsClient([
             'credentials' => [
-                'key'    => $amazon_sns_key,
+                'key' => $amazon_sns_key,
                 'secret' => $amazon_sns_secret
             ],
-            'version'=> 'latest',
+            'version' => 'latest',
             'region' => $amazon_sns_region
-        ));
+        ]);
     }
 
     /**
@@ -43,7 +43,7 @@ class AmazonSNSClient
         ];
 
         try {
-          return $this->service->publish($args);
+            return $this->service->publish($args);
         } catch (AwsException $e) {
             error_log($e->getMessage());
         }
