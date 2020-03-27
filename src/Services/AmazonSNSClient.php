@@ -2,8 +2,8 @@
 
 namespace Solpac\SNSBundle\Services;
 
+use Aws\Exception\AwsException;
 use Aws\Sns\SnsClient;
-use Aws\Sns\Exception\SnsException;
 
 
 class AmazonSNSClient

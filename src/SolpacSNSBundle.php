@@ -1,7 +1,7 @@
 <?php
 namespace Solpac\SNSBundle;
 
-use Solpac\SNSBundle\DependencyInjection\Solpac\SNSExtension;
+use Solpac\SNSBundle\DependencyInjection\SolpacSNSExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class SolpacSNSBundle extends Bundle
@@ -14,7 +14,7 @@ class SolpacSNSBundle extends Bundle
     public function getContainerExtension()
     {
         if (null === $this->extension) {
-            $this->extension = new SNSExtension();
+            $this->extxension = new SolpacSNSExtension();
         }
 
         return $this->extension;
